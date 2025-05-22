@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { t } from "../lib/fonctions";
 
-export default function AdminPanel({ supabase, profile }) {
+export default function AdminPanel({ supabase, session, profile }) {
     const [users, setUsers] = useState([]);
     const [newUser, setNewUser] = useState({ nom_utilisateur: "", email: "", role: "visiteur" });
     const [associations, setAssociations] = useState([]);
