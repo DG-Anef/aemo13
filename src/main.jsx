@@ -1,13 +1,13 @@
 ﻿// src/main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom"; // ⚙️ Import du routeur
+import { HashRouter as Router } from "react-router-dom"; // ⚙️ Import du routeur
 import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <BrowserRouter>
+        <Router>
             <App />
-        </BrowserRouter>
+        </Router>
     </React.StrictMode>
 );
