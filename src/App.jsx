@@ -85,7 +85,7 @@ export default function App() {
                 path="/dashboard"
                 element={
                   session ? (
-                    <Dashboard session={session} supabase={supabase} profile={profile} />
+                    <Dashboard supabase={supabase} profile={profile} />
                   ) : (
                     <Navigate to="/login" replace />
                   )
@@ -95,7 +95,7 @@ export default function App() {
                 path="/admin"
                 element={
                   session && profile?.role === "admin" ? (
-                    <AdminPanel session={session} supabase={supabase} profile={profile} />
+                    <AdminPanel supabase={supabase} profile={profile} />
                   ) : (
                     <Navigate to="/login" replace />
                   )
