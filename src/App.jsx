@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState } from "react";
-import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+//import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 import supabase from "./lib/supabaseClient";
 import "./index.css";
 import Login from "./pages/Login";
@@ -68,13 +69,13 @@ export default function App() {
             <Header session={session} profile={profile} supabase={supabase} />
             <Routes>
               <Route
-                path="/aemo13/login"
+                path="/login"
                 element={
                   session ? (
                     profile?.role === "admin" ? (
-                      <Navigate to="/aemo13/admin" replace />
+                      <Navigate to="/admin" replace />
                     ) : (
-                      <Navigate to="/aemo13/dashboard" replace />
+                      <Navigate to="/dashboard" replace />
                     )
                   ) : (
                     <Login supabase={supabase} />
@@ -82,42 +83,42 @@ export default function App() {
                 }
               />
               <Route
-                path="/aemo13/dashboard"
+                path="/dashboard"
                 element={
                   session ? (
                     <Dashboard supabase={supabase} profile={profile} />
                   ) : (
-                    <Navigate to="/aemo13/login" replace />
+                    <Navigate to="/login" replace />
                   )
                 }
               />
               <Route
-                path="/aemo13/admin"
+                path="/admin"
                 element={
                   session && profile?.role === "admin" ? (
                     <AdminPanel supabase={supabase} />
                   ) : (
-                    <Navigate to="/aemo13/login" replace />
+                    <Navigate to="/login" replace />
                   )
                 }
               />
               <Route
-                path="/aemo13/visiteur"
+                path="/visiteur"
                 element={
                   session && (profile?.role === "visiteur" || profile?.role === "admin") ? (
                     <Visiteur supabase={supabase} profile={profile} />
                   ) : (
-                    <Navigate to="/aemo13/dashboard" replace />
+                    <Navigate to="/dashboard" replace />
                   )
                 }
               />
               <Route
-                path="/aemo13/auteur"
+                path="/auteur"
                 element={
                   session && (profile?.role === "auteur" || profile?.role === "admin") ? (
                     <Auteur supabase={supabase} profile={profile} />
                   ) : (
-                    <Navigate to="/aemo13/dashboard" replace />
+                    <Navigate to="/dashboard" replace />
                   )
                 }
               />
@@ -125,9 +126,9 @@ export default function App() {
                 path="*"
                 element={
                   session ? (
-                    <Navigate to="/aemo13/dashboard" replace />
+                    <Navigate to="/dashboard" replace />
                   ) : (
-                    <Navigate to="/aemo13/login" replace />
+                    <Navigate to="/login" replace />
                   )
                 }
               />
