@@ -1,7 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import {Navigate, useNavigate, useLocation } from "react-router-dom";
-//import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 import supabase from "./lib/supabaseClient";
 import "./index.css";
 import Login from "./pages/Login";
