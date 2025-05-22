@@ -1,5 +1,4 @@
-﻿// src/App.jsx
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 import supabase from "./lib/supabaseClient";
 import "./index.css";
