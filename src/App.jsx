@@ -95,7 +95,7 @@ export default function App() {
                 path="/admin"
                 element={
                   session && profile?.role === "admin" ? (
-                    <AdminPanel supabase={supabase} />
+                    <AdminPanel session={session} supabase={supabase} profile={profile} />
                   ) : (
                     <Navigate to="/login" replace />
                   )
