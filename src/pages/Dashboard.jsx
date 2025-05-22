@@ -2,7 +2,7 @@ sion﻿//src/pages/Dashboard.jsx
 import { useEffect, useState } from "react";
 import { t } from "../lib/fonctions";
 
-export default function Dashboard({ supabase, session, profile }) {
+export default function Dashboard({ supabase, profile }) {
     const [services, setServices] = useState([]);
     const [places, setPlaces] = useState({});
     const [loading, setLoading] = useState(false);
