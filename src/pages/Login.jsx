@@ -22,7 +22,7 @@ export default function Login({ supabase, profile }) {
             setError(authError.message);
         } else {
             //navigate("/dashboard");
-            window.location.href = "/dashboard";
+            window.location.href = "/aemo13/dashboard";
         }
     }
 
