@@ -21,8 +21,8 @@ export default function Login({ supabase, profile }) {
             console.error("Erreur de connexion :", authError.message);
             setError(authError.message);
         } else {
-            navigate("/aemo13/dashboard");
-            window.location.href = "/aemo13/";
+            navigate("/dashboard");
+            window.location.href = "/index.html";
         }
     }
 
