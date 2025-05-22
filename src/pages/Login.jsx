@@ -21,8 +21,8 @@ export default function Login({ supabase, profile }) {
             console.error("Erreur de connexion :", authError.message);
             setError(authError.message);
         } else {
-            navigate("/dashboard");
-            window.location.href = "/index.html";
+            //navigate("/dashboard");
+            window.location.href = "/dashboard";
         }
     }
 
