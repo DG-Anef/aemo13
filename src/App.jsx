@@ -67,70 +67,70 @@ export default function App() {
         <>
             <Header session={session} profile={profile} supabase={supabase} />
             <Routes>
-                <Route
-                    path="/login"
-                    element={
-                        session ? (
-                            profile?.role === "admin" ? (
-                                <Navigate to="/admin" replace />
-                            ) : (
-                                <Navigate to="/dashboard" replace />
-                            )
-                        ) : (
-                            <Login supabase={supabase} />
-                        )
-                    }
-                />
-                <Route
-                    path="/dashboard"
-                    element={
-                        session ? (
-                            <Dashboard supabase={supabase} profile={profile} />
-                        ) : (
-                            <Navigate to="/login" replace />
-                        )
-                    }
-                />
-                <Route
-                    path="/admin"
-                    element={
-                        session && profile?.role === "admin" ? (
-                            <AdminPanel supabase={supabase} />
-                        ) : (
-                            <Navigate to="/login" replace />
-                        )
-                    }
-                />
-                <Route
-                    path="/visiteur"
-                    element={
-                        session && (profile?.role === "visiteur" || profile?.role === "admin") ? (
-                            <Visiteur supabase={supabase} profile={profile} />
-                        ) : (
-                            <Navigate to="/dashboard" replace />
-                        )
-                    }
-                />
-                <Route
-                    path="/auteur"
-                    element={
-                        session && (profile?.role === "auteur" || profile?.role === "admin") ? (
-                            <Auteur supabase={supabase} profile={profile} />
-                        ) : (
-                            <Navigate to="/dashboard" replace />
-                        )
-                    }
-                />
-                <Route
-                    path="*"
-                    element={
-                        session ? (
-                            <Navigate to="/dashboard" replace />
-                        ) : (
-                            <Navigate to="/login" replace />
-                        )
-                    }
-                />
+              <Route
+                path="/aemo13/login"
+                element={
+                  session ? (
+                    profile?.role === "admin" ? (
+                      <Navigate to="/aemo13/admin" replace />
+                    ) : (
+                      <Navigate to="/aemo13/dashboard" replace />
+                    )
+                  ) : (
+                    <Login supabase={supabase} />
+                  )
+                }
+              />
+              <Route
+                path="/aemo13/dashboard"
+                element={
+                  session ? (
+                    <Dashboard supabase={supabase} profile={profile} />
+                  ) : (
+                    <Navigate to="/aemo13/login" replace />
+                  )
+                }
+              />
+              <Route
+                path="/aemo13/admin"
+                element={
+                  session && profile?.role === "admin" ? (
+                    <AdminPanel supabase={supabase} />
+                  ) : (
+                    <Navigate to="/aemo13/login" replace />
+                  )
+                }
+              />
+              <Route
+                path="/aemo13/visiteur"
+                element={
+                  session && (profile?.role === "visiteur" || profile?.role === "admin") ? (
+                    <Visiteur supabase={supabase} profile={profile} />
+                  ) : (
+                    <Navigate to="/aemo13/dashboard" replace />
+                  )
+                }
+              />
+              <Route
+                path="/aemo13/auteur"
+                element={
+                  session && (profile?.role === "auteur" || profile?.role === "admin") ? (
+                    <Auteur supabase={supabase} profile={profile} />
+                  ) : (
+                    <Navigate to="/aemo13/dashboard" replace />
+                  )
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  session ? (
+                    <Navigate to="/aemo13/dashboard" replace />
+                  ) : (
+                    <Navigate to="/aemo13/login" replace />
+                  )
+                }
+              />
             </Routes>
         </>
     );
