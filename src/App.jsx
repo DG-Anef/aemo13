@@ -85,7 +85,7 @@ export default function App() {
                 path="/dashboard"
                 element={
                   session ? (
-                    <Dashboard supabase={supabase} profile={profile} />
+                    <Dashboard session={session} supabase={supabase} profile={profile} />
                   ) : (
                     <Navigate to="/login" replace />
                   )
